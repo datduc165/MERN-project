@@ -1,0 +1,216 @@
+.navContainer {
+    background-color: rgb(105, 105, 212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    gap:10rem;
+    z-index: 999;
+    top: 0;
+    height: 6rem;
+}
+
+/* ANIMATION keyframe */
+.navContainer.scrolling-active {
+
+    animation-name: scrolling;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+
+
+.list li {
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 550;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color:white;
+}
+
+.navbar a:hover {
+    color: rgb(224, 173, 3);
+    /* -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0); */
+    /* box-shadow:  inset 0px -8px 3px 0px var(--red); */
+    border: 1px solid rgb(224, 173, 3);
+    border-radius: 8px;
+}
+
+#toggler,
+.navbar label {
+    display: none;
+}
+
+@keyframes scrolling {
+    0% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    50% {
+        background-color: rgba(255, 255, 255, 0.615);
+    }
+
+    100% {
+        background-color: white;
+        box-shadow: -5px -4px 50px 4px rgb(196 185 185 / 40%);
+    }
+}
+
+.logo {
+    font-family: 'Exo 2', sans-serif;
+    /* font-family: 'poppins'; */
+    color: var(--red);
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 900;
+    padding-bottom: .5rem;
+}
+
+.logo span {
+    font-family: 'Oswald', sans-serif;
+    /* font-family:"Montserrat",sans-serif; */
+    font-weight: 800;
+    /* padding-bottom: 0.0rem; */
+    color: rgb(224, 173, 3);
+    letter-spacing: 3px;
+    display: block;
+}
+
+@media screen and (max-width:900px) {
+    .logo {
+        font-size: 1.5rem ;
+    }
+    .navContainer {
+        justify-content: space-around;
+    }
+    .navbar {
+        /* padding-right: 15vw; */
+        position: relative;
+    }
+    .navbar a {
+        color: red;
+    }
+    .navbar label {
+        /* display: inline-flex;
+        align-items: center; */
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .menu {
+        width: 45%;
+        padding: 1.5rem 0;
+        overflow: hidden;
+        position: fixed;
+        transition: all .8s ease-in-out .35s;
+        top: 6rem;
+        left: 150%;
+        height: 100vh;
+        background: rgba(249, 249, 249, 0.236);
+        box-shadow: 0 4px 30px rgb(186, 184, 184);
+        backdrop-filter: blur(9px);
+        -webkit-backdrop-filter: blur(9px);
+        border-radius: 3px;
+        text-align: center;
+
+    }
+
+    #toggler:checked~.menu {
+        padding-top: 2.5rem;
+        left: 55%;
+    }
+
+    /* .list {
+        flex-direction: column;
+        align-items: center;
+    } */
+
+
+    .list a {
+        width: 100%;
+        display: block;
+        padding: 1.3rem 0;
+        font-size: 1rem;
+    }
+
+    .list li {
+        display: block;
+        
+        margin: 2rem 0;
+    }
+
+    /* .list li:hover {
+       
+        color: var(--red);
+    } */
+
+
+    label div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 1.8rem;
+        height: 1.8rem;
+        
+        /* align-self: center; */
+       
+        transition: all .4s ease-in;
+    }
+
+    label div:hover {
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        border-radius: 3px;
+    }
+
+    label span {
+        display: block;
+        width: 1.5rem;
+        height: .2rem;
+        border-radius: 2px;
+        background-color: #ffffff;
+        margin-bottom: .2rem;
+        flex-shrink: 3;
+    }
+
+
+    label span:last-child {
+        margin-bottom: 0;
+    }
+
+    label,
+    label span {
+        transition: all .4s ease-in;
+    }
+
+    label.active {
+        transition-delay: 0.2s;
+        transform: rotateY(180deg);
+    }
+
+    label.active span:nth-child(2) {
+        width: 0;
+    }
+
+    label.active span:nth-child(1),
+    label.active span:nth-child(3) {
+        transition-delay: .3s;
+    }
+
+    label.active span:nth-child(1) {
+        transform: translateY(.4rem) rotate(-45deg);
+    }
+
+    label.active span:nth-child(3) {
+        transform: translateY(-.4rem) rotate(45deg);
+    }
+
+}

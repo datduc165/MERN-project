@@ -1,0 +1,160 @@
+.header {
+    top: 7rem;
+    display: flex;
+
+    align-items: center;
+    position: relative;
+    flex-flow: column;
+    /* margin: 1rem 10rem; */
+}
+
+.headerTitle {
+    margin: 3rem;
+    /* min-height: 5rem; */
+    /* width: 100%; */
+    /* height:30%; */
+}
+
+.headerTitle h1 {
+    color: var(--red);
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+@media screen and (max-width:600px) {
+    .headerTitle h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
+.headerSearch {
+
+    border: 3px solid rgb(224, 173, 3);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    max-width: 1024px;
+    /* width: 100%; */
+    position: relative;
+    min-height: 5rem;
+    padding: 1rem;
+
+}
+
+@media screen and (max-width:500px) {
+    .headerSearch {
+        flex-flow: column;
+    }
+}
+
+
+.searchItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 1.5rem;
+    /* width: 100%; */
+}
+
+.headerIcon {
+    color: rgb(156, 43, 43);
+    margin: 0 .5rem;
+    background-color: white;
+
+}
+
+.headerIcon.calender {
+    cursor: pointer;
+}
+
+.headerBtn {
+    background-color: rgb(105, 105, 212);
+    color: white;
+    font-weight: 700;
+    padding: .7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.searchInput {
+    outline: none;
+    /* border: none; */
+    width:8rem;
+}
+
+.date {
+    position: absolute;
+    top: 101%;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 1s ease-in-out .5s;
+    opacity: 0;
+    height: 0;
+    
+}
+
+.date.loaded {
+    opacity: 1;
+    height: auto;
+}
+
+/* .people {
+    position: relative;
+} */
+
+.peopleCount {
+    display: none;
+    position: absolute;
+    padding: 1rem;
+    border: 1px solid rgb(239, 187, 90);
+    z-index: 2;
+    background-color: rgb(110, 166, 230);
+    border-radius: 5px;
+    max-width: 9rem;
+    
+    transform: translateX(-50%);
+    top:100%;
+    /* top: 5rem; */
+    font-size: 1rem;
+    text-align: end;
+}
+
+.peopleCount.loaded {
+    display: flex;
+    justify-content: space-around;
+
+}
+.peopleCount >*{
+    margin:5px;
+}
+.peopleCountBtn {
+    min-width: 1rem;
+}
+
+@media screen and (max-width:630px) {
+    .date.loaded {
+        left: 0;
+        width: 100%;
+        align-items: center;
+    }
+    .peopleCount {
+        left:50%;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .rdrYearPickers {
+        font-size: 5px;
+    }
+
+    .date {
+        font-size: 10px;
+    }
+}
